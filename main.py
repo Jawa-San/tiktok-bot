@@ -28,6 +28,6 @@ def searchSub(subreddit, articles):
 
 
 
-subreddit = "tifu"
+subreddit = "AskReddit"
 makeDirectory(subreddit)
 searchSub(subreddit, 3)

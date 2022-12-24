@@ -1,9 +1,11 @@
 from gtts import gTTS 
+import os
 
-with open('tifu/Tifu by eating my husbands anniversary breakfast he made me.txt', 'r') as file:
-    data = file.read().replace('\n', '')
+directory = './tifu'
 
-
-tts = gTTS(data)
-print(type(data))
-tts.save("./audio/hello.mp3")
+for filename in os.listdir(directory):
+    with open(os.path.join(directory, filename), "r") as f:
+        data = f.read()  #.replace('\n', '')
+        tts = gTTS(data)
+        filename = filename[:-4]
+        tts.save("./audio/" + filename + ".mp3")
